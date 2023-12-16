@@ -61,4 +61,28 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+
+    void GenerateBigObstical(int spawns, GameObject item)
+    {
+        for(int z = 0; z < spawns; z++)
+        {
+            bool foundSpot = false;
+            for(int i = 0; i < shoots; i++)
+            {
+                if(!foundSpot)
+                {
+                    var x = Random.Range(0, width);
+                    var y = Random.Range(0, height);
+
+                    if(!tiles[x][y].GetComponent<TileScript>().occupied)
+                    {
+                        GameObject newItem = Instantiate(item, new Vector3(x, y), transform.rotation);
+                        tiles[x][y].GetComponent<TileScript>().occupied = true;
+                        foundSpot = true;
+
+                        newItem.transform.SetParent(gameObject.transform);
+                    }
+                }
+            }
+        }
 }
