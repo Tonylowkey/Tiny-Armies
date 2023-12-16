@@ -10,6 +10,8 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private GameObject tree;
 
+    [SerializeField] private GameObject rock;
+
     public List<List<GameObject>> tiles = new List<List<GameObject>>();
 
     public int shoots;
@@ -19,6 +21,7 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
 
         GenerateObstical(50, tree);
+        GenerateObstical(50, rock);
     }
 
     void GenerateGrid()

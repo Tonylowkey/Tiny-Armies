@@ -16,11 +16,55 @@ public class Ore : MonoBehaviour
     public LayerMask mask;
 
     public bool Mining;
+
+    public Sprite sp1;
+    public Sprite sp2;
+    public Sprite sp3;
+
+    public bool Tree;
+    
+    public SpriteRenderer sr;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         sl.maxValue = health;
         sl.value = health;
+        if(Tree == true)
+        {
+            int random = Random.Range(0, 3);
+            if(random == 0)
+            {
+                sr.sprite = sp1;
+            }
+            if (random == 1)
+            {
+                sr.sprite = sp2;
+            }
+            if (random == 2)
+            {
+                sr.sprite = sp3;
+            }
+
+        }
+        if (Tree == false)
+        {
+            int random = Random.Range(0, 3);
+            if (random == 0)
+            {
+                sr.sprite = sp1;
+            }
+            if (random == 1)
+            {
+                sr.sprite = sp2;
+            }
+            if (random == 2)
+            {
+                sr.sprite = sp3;
+            }
+
+        }
     }
 
     // Update is called once per frame
