@@ -6,8 +6,9 @@ public class ArmyControllerScript : MonoBehaviour
 {
     public static ArmyControllerScript Instance;
 
-    private GameObject selected;
+    public GameObject selected;
     private GameObject target;
+    private bool newSelect;
 
     void Awake()
     {
@@ -26,16 +27,17 @@ public class ArmyControllerScript : MonoBehaviour
     public void Select(GameObject unit)
     {
         selected = unit;
-
-        Debug.Log("selected");
+        newSelect = true;
     }
 
     public void Click()
     {
-        if(selected!=null)
+        if(selected!=null && !newSelect)
         {
             selected.SendMessage("Deselect");
             selected = null;
         }
+        
+        newSelect = false;
     }
 }

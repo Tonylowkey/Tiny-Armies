@@ -63,10 +63,14 @@ public class SquadControlScript : MonoBehaviour
 
     void CalculatePathToMouse()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
+        if(ArmyControllerScript.Instance.selected == gameObject)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f;
 
-        seeker.StartPath(rb.position, mousePos, OnPathComplete);
+            seeker.StartPath(rb.position, mousePos, OnPathComplete);
+        }
+        
     }
 
     void OnPathComplete(Path p)
@@ -83,6 +87,8 @@ public class SquadControlScript : MonoBehaviour
     {
         ArmyControllerScript.Instance.Select(gameObject);
         gameObject.GetComponent<SpriteRenderer>().color = selectColor;
+
+        Debug.Log("selected");
     }
 
     public void Deselect()
