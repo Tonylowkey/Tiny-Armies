@@ -31,6 +31,8 @@ public class GridManager : MonoBehaviour
             {
                 var newTile = Instantiate(tilePrefab, new Vector3(x, y), transform.rotation);
                 tiles[x].Add(newTile);
+                
+                newTile.transform.SetParent(gameObject.transform);
             }
         }
 
@@ -51,9 +53,11 @@ public class GridManager : MonoBehaviour
 
                     if(!tiles[x][y].GetComponent<TileScript>().occupied)
                     {
-                        Instantiate(item, new Vector3(x, y), transform.rotation);
+                        GameObject newItem = Instantiate(item, new Vector3(x, y), transform.rotation);
                         tiles[x][y].GetComponent<TileScript>().occupied = true;
                         foundSpot = true;
+
+                        newItem.transform.SetParent(gameObject.transform);
                     }
                 }
             }
