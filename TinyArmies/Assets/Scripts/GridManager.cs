@@ -35,8 +35,6 @@ public class GridManager : MonoBehaviour
                 newTile.transform.SetParent(gameObject.transform);
             }
         }
-
-        Debug.Log(tiles[0][0]);
     }
 
     void GenerateObstical(int spawns, GameObject item)
