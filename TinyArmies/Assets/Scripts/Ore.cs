@@ -25,7 +25,7 @@ public class Ore : MonoBehaviour
     
     public SpriteRenderer sr;
 
-    
+    public int randomRotate;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +64,24 @@ public class Ore : MonoBehaviour
                 sr.sprite = sp3;
             }
 
+
+
+        }
+
+
+         randomRotate = Random.Range(0, 30);
+        if(randomRotate >= 16)
+        {
+            randomRotate = randomRotate / 2;
+            Quaternion rotation = Quaternion.Euler(0, 0, randomRotate);
+            transform.rotation = rotation;
+
+        }
+        if (randomRotate <= 15)
+        {
+            randomRotate -= randomRotate * 2;
+            Quaternion rotation =  Quaternion.Euler(0,0 ,randomRotate);
+            transform.rotation = rotation;
         }
     }
 
