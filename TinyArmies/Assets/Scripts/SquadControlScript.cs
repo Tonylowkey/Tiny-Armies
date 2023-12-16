@@ -77,7 +77,13 @@ public class SquadControlScript : MonoBehaviour
     void OnMouseDown()
     {
         ArmyControllerScript.Instance.Select(gameObject);
-
-        Debug.Log("selected");
+        gameObject.GetComponent<SpriteRenderer>().color = selectColor;
     }
+
+    public void Deselect()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+    }
+
+
 }

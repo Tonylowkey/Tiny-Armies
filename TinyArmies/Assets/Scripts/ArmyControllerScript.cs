@@ -17,10 +17,25 @@ public class ArmyControllerScript : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+            Click();
+    }
+
     public void Select(GameObject unit)
     {
         selected = unit;
 
         Debug.Log("selected");
+    }
+
+    public void Click()
+    {
+        if(selected!=null)
+        {
+            selected.SendMessage("Deselect");
+            selected = null;
+        }
     }
 }

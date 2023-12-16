@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75c52c2e2978cd47b39c208408c68c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!58 &566406798
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75c52c2e2978cd47b39c208408c68c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!58 &1346040944
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75c52c2e2978cd47b39c208408c68c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!1 &1450237892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581052813}
   - component: {fileID: 1581052815}
+  - component: {fileID: 1581052819}
   - component: {fileID: 1581052818}
   - component: {fileID: 1581052814}
   - component: {fileID: 1581052817}
@@ -1674,6 +1675,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &1581052819
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581052812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1848293670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75c52c2e2978cd47b39c208408c68c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 10
 --- !u!58 &1848293674
 CircleCollider2D:
   m_ObjectHideFlags: 0
