@@ -26,11 +26,16 @@ public class SquadControlScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1))
         {
             CalculatePathToMouse();
         }
 
+        
+    }
+
+    void FixedUpdate()
+    {
         // Check if the path calculation is done
         if (path == null)
             return;

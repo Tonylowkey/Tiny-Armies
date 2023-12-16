@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
 
+    public GameObject squadPos;
+    public float centerDistance;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -19,11 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Vector2.Distance(transform.position, squadPos.transform.position) > centerDistance)
         {
-            CalculatePathToMouse();
+            CalculatePathToGroup();
         }
 
+        
+    }
+
+    void FixedUpdate()
+    {
         // Check if the path calculation is done
         if (path == null)
             return;
@@ -49,12 +57,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void CalculatePathToMouse()
+    void CalculatePathToGroup()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
-
-        seeker.StartPath(rb.position, mousePos, OnPathComplete);
+        seeker.StartPath(rb.position, squadPos.transform.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)

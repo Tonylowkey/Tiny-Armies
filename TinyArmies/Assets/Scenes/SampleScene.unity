@@ -568,6 +568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  squadPos: {fileID: 1581052812}
+  centerDistance: 2
 --- !u!58 &566406798
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -977,6 +979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  squadPos: {fileID: 1581052812}
+  centerDistance: 2
 --- !u!58 &1346040944
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1340,6 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  squadPos: {fileID: 1581052812}
+  centerDistance: 2
 --- !u!1 &1450237892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +1821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  squadPos: {fileID: 1581052812}
+  centerDistance: 2
 --- !u!58 &1848293674
 CircleCollider2D:
   m_ObjectHideFlags: 0
