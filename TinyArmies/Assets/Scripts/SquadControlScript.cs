@@ -26,7 +26,7 @@ public class SquadControlScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             CalculatePathToMouse();
         }
@@ -77,5 +77,7 @@ public class SquadControlScript : MonoBehaviour
     void OnMouseDown()
     {
         ArmyControllerScript.Instance.Select(gameObject);
+
+        Debug.Log("selected");
     }
 }
