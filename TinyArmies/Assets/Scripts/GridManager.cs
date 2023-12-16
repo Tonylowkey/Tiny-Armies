@@ -69,15 +69,36 @@ public class GridManager : MonoBehaviour
             bool foundSpot = false;
             for(int i = 0; i < shoots; i++)
             {
+                bool tilesUnoccupied = true;
+
                 if(!foundSpot)
                 {
                     var x = Random.Range(0, width);
                     var y = Random.Range(0, height);
 
-                    if(!tiles[x][y].GetComponent<TileScript>().occupied)
+                    Vector2 size = item.transform.scale;
+
+                    for(a = 0; a < size.x; a++)
                     {
-                        GameObject newItem = Instantiate(item, new Vector3(x, y), transform.rotation);
-                        tiles[x][y].GetComponent<TileScript>().occupied = true;
+                        for(b = 0; b < size.y; b++)
+                        {
+                            if(tiles[x + a][y + b].occupied)
+                            {
+                                tilesUnoccupied = false;
+                            }
+                        }
+                    }
+
+                    if(tilesUnoccupied)
+                    {
+                        GameObject newItem = Instantiate(item, new Vector3(x + (size.x - 1)/2, y + (size.y - 1)/2), transform.rotation);
+
+                        for(a = 0; a < size.x; a++)
+                        {
+                            for(b = 0; b < size.y; b++)
+                            tiles[x + a][y + b].GetComponent<TileScript>().occupied = true;
+                        }
+
                         foundSpot = true;
 
                         newItem.transform.SetParent(gameObject.transform);
