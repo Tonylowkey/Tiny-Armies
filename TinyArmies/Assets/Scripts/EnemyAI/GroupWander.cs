@@ -47,6 +47,7 @@ public class GroupWander : MonoBehaviour
 
             // Check if the player is close enough to the current waypoint to move to the next one
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            
             if (distance < 0.1f)
             {
                 currentWaypoint++;
