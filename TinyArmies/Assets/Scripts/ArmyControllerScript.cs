@@ -6,6 +6,8 @@ public class ArmyControllerScript : MonoBehaviour
 {
     public static ArmyControllerScript Instance;
 
+    [SerializeField] LayerMask controllerLayer;
+    [SerializeField] LayerMask militiaLayer;
     public GameObject selected;
     private GameObject target;
     private bool newSelect;
@@ -32,12 +34,25 @@ public class ArmyControllerScript : MonoBehaviour
 
     public void Click()
     {
-        if(selected!=null && !newSelect)
+        var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), controllerLayer);
+        var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), militiaLayer);
+
+        if(selected != null)
+            selected.SendMessage("Deselect");
+
+        if(controllerHit.collider.gameObject.tag == "groupController")
+        {
+            selected = controllerHit.collider.gameObject;
+            selected.SendMessage("Select");
+        }
+        else if(militiaHit.collider.gameObject.tag == "playerMilitia")
+        {
+            selected = militiaHit.collider.gameObject;
+        }
+        else if(selected != null)
         {
             selected.SendMessage("Deselect");
             selected = null;
         }
-        
-        newSelect = false;
     }
 }

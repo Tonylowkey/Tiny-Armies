@@ -746,9 +746,9 @@ GameObject:
   - component: {fileID: 566406797}
   - component: {fileID: 566406796}
   - component: {fileID: 566406795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerArmy (3)
-  m_TagString: Untagged
+  m_TagString: playerMilitia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -872,7 +872,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!50 &566406799
 Rigidbody2D:
   serializedVersion: 4
@@ -962,7 +962,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17.9, y: 24.9, z: 3.929327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138484269}
@@ -1491,9 +1491,9 @@ GameObject:
   - component: {fileID: 1346040943}
   - component: {fileID: 1346040942}
   - component: {fileID: 1346040941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerArmy (1)
-  m_TagString: Untagged
+  m_TagString: playerMilitia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1617,7 +1617,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!50 &1346040945
 Rigidbody2D:
   serializedVersion: 4
@@ -1707,7 +1707,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 20.5, y: 26.9, z: 3.929327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138484269}
@@ -1727,9 +1727,9 @@ GameObject:
   - component: {fileID: 1382530171}
   - component: {fileID: 1382530169}
   - component: {fileID: 1382530168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerArmy
-  m_TagString: Untagged
+  m_TagString: playerMilitia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1796,7 +1796,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 19.3, y: 30.8, z: 3.929327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138484269}
@@ -1835,7 +1835,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!114 &1382530168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2482,9 +2482,9 @@ GameObject:
   - component: {fileID: 1581052814}
   - component: {fileID: 1581052817}
   - component: {fileID: 1581052816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Squad0
-  m_TagString: Untagged
+  m_TagString: groupController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2498,8 +2498,8 @@ Transform:
   m_GameObject: {fileID: 1581052812}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.7, y: 22.9, z: 3.929327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 28.7, y: 22.9, z: 5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138484269}
@@ -2719,9 +2719,9 @@ GameObject:
   - component: {fileID: 1848293673}
   - component: {fileID: 1848293672}
   - component: {fileID: 1848293671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerArmy (2)
-  m_TagString: Untagged
+  m_TagString: playerMilitia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2845,7 +2845,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!50 &1848293675
 Rigidbody2D:
   serializedVersion: 4
@@ -2935,7 +2935,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16.3, y: 28.7, z: 3.929327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138484269}
@@ -3273,6 +3273,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a46be62da6da541842f22b04865bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  militiaLayer:
+    serializedVersion: 2
+    m_Bits: 256
   selected: {fileID: 0}
 --- !u!1001 &8720741276707633100
 PrefabInstance:

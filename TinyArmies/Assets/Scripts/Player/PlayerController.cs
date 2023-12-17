@@ -71,4 +71,9 @@ public class PlayerMovement : MonoBehaviour
             currentWaypoint = 0;
         }
     }
+
+    public void Deselect()
+    {
+        Debug.Log("Militia Deselected");
+    }
 }
