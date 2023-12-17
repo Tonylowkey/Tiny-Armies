@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
+    public static Gamemanager Instance;
     public int wood;
     public int rock;
     public int iron;

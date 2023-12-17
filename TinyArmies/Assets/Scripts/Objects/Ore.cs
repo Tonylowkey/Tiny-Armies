@@ -33,9 +33,6 @@ public class Ore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm = FindObjectOfType<Gamemanager>();
-
-        
         sl.maxValue = health;
         sl.value = health;
         if(Tree == true)
@@ -113,6 +110,7 @@ public class Ore : MonoBehaviour
             if (health <= 0)
             {
                 Check();
+                GridManager.Instance.tiles[(int)(transform.position.x)][(int)(transform.position.y)].GetComponent<TileScript>().occupied = false;
                 Destroy(gameObject);
             }
         }
@@ -132,30 +130,30 @@ public class Ore : MonoBehaviour
         {
             if (oreIndex == 1)
             {
-                gm.wood += amount;
+                Gamemanager.Instance.wood += amount;
             }
             if (oreIndex == 2)
             {
-                gm.wood += amount;
+                Gamemanager.Instance.wood += amount;
             }
             if (oreIndex == 3)
             {
-                gm.wood += amount;
+                Gamemanager.Instance.wood += amount;
             }
         }
         if (Tree == false)
         {
             if (oreIndex == 1)
             {
-                gm.rock += amount;
+                Gamemanager.Instance.rock += amount;
             }
             if (oreIndex == 2)
             {
-                gm.wood += amount;
+                Gamemanager.Instance.wood += amount;
             }
             if (oreIndex == 3)
             {
-                gm.iron += amount;
+                Gamemanager.Instance.iron += amount;
             }
         }
     }

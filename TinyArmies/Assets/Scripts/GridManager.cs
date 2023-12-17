@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
+    [SerializeField] private AstarPath astarPath;
     [SerializeField] public int width, height;
 
     [SerializeField] private GameObject tilePrefab;
@@ -115,5 +117,10 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    void Rescan()
+    {
+        astarPath.Scan();
     }
 }
