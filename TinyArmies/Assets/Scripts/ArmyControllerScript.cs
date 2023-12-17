@@ -34,9 +34,13 @@ public class ArmyControllerScript : MonoBehaviour
 
     public void Click()
     {
+        Vector2 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(new Vector2(mousePos.x, mousePos.y));
 
-        var controllerHit = Physics2D.OverlapCircle(Input.mousePosition,0.1f,controllerLayer);
-        var militiaHit = Physics2D.OverlapCircle(Input.mousePosition, 0.1f, militiaLayer);
+
+        var controllerHit = Physics2D.OverlapCircle(mousePos, 0.1f, controllerLayer);
+        var militiaHit = Physics2D.OverlapCircle(mousePos, 0.1f, militiaLayer);
+        
 
 
 
