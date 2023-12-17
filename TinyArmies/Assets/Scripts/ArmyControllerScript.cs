@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ArmyControllerScript : MonoBehaviour
 {
     public static ArmyControllerScript Instance;
@@ -35,22 +34,16 @@ public class ArmyControllerScript : MonoBehaviour
 
     public void Click()
     {
-        Vector2 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(new Vector2(mousePos.x, mousePos.y));
+        var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), controllerLayer);
+        var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), militiaLayer);
 
-
-        var controllerHit = Physics2D.OverlapCircle(mousePos,0.1f,controllerLayer);
-        var militiaHit = Physics2D.OverlapCircle(mousePos, 0.1f, militiaLayer);
-
-
-
-        if (selected != null)
+        if(selected != null)
             selected.SendMessage("Deselect");
 
         if(controllerHit == true)
         {
-
-            selected = controllerHit.gameObject;
+           
+            selected = controllerHit.collider.gameObject;
 
             selected.SendMessage("Select");
 
