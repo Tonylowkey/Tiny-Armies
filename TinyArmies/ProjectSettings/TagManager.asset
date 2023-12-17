@@ -6,6 +6,7 @@ TagManager:
   tags:
   - playerMilitia
   - groupController
+  - Enemy
   layers:
   - Default
   - TransparentFX
