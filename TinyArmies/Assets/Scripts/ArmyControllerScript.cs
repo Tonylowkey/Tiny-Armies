@@ -37,6 +37,8 @@ public class ArmyControllerScript : MonoBehaviour
         var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), controllerLayer);
         var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), militiaLayer);
 
+       
+
         if(selected != null)
             selected.SendMessage("Deselect");
 
@@ -51,7 +53,7 @@ public class ArmyControllerScript : MonoBehaviour
         else if(militiaHit == true)
         {
 
-            selected = FindObjectOfType<SquadControlScript>().gameObject;
+            selected = militiaHit.collider.gameObject;
             selected.SendMessage("Select");
         }
         else if(selected != null)
