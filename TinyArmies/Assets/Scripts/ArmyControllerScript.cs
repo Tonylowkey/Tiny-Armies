@@ -34,25 +34,29 @@ public class ArmyControllerScript : MonoBehaviour
 
     public void Click()
     {
-        var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), controllerLayer);
-        var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), militiaLayer);
+        var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), Mathf.Infinity, controllerLayer);
+        var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), Mathf.Infinity, militiaLayer);
 
         if(selected != null)
             selected.SendMessage("Deselect");
 
-        if(controllerHit == true)
+        if(controllerHit.collider != null)
         {
-           
-            selected = controllerHit.collider.gameObject;
+            if(controllerHit.collider.gameObject.tag == "groupController")
+            {
+                selected = controllerHit.collider.gameObject;
 
-            selected.SendMessage("Select");
+                selected.SendMessage("Select");
 
+            }
         }
-        else if(militiaHit == true)
+        else if(militiaHit.collider != null)
         {
-
-            selected = FindObjectOfType<SquadControlScript>().gameObject;
-            selected.SendMessage("Select");
+            if(militiaHit.collider.gameObject.tag == "playerMilitia")
+            {
+                selected = militiaHit.collider.gameObject;
+                selected.SendMessage("Select");
+            }
         }
         else if(selected != null)
         {

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class PlayerMovement : MonoBehaviour
+public class GroupWander : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float wanderSpeed = 2f;
+    public float damping = 0.1f; // Damping factor
+    // public GameObject wanderPoint; // Array of waypoints in the pathfinding area
+
+    
     private Seeker seeker;
     private Rigidbody2D rb;
     private Path path;
     private int currentWaypoint = 0;
-
     public GameObject squadPos;
     public float centerDistance;
 
@@ -40,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Move towards the current waypoint
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)rb.position).normalized;
-            rb.velocity = direction * moveSpeed;
+            rb.velocity = direction * wanderSpeed;
 
             // Check if the player is close enough to the current waypoint to move to the next one
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -71,14 +74,5 @@ public class PlayerMovement : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-
-    public void Deselect()
-    {
-        Debug.Log("Militia Deselected");
-    }
-
-    public void Select()
-    {
-        Debug.Log("Militia Selected");
-    }
 }
+

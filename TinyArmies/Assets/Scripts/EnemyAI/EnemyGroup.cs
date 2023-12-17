@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class PlayerMovement : MonoBehaviour
+public class EnemyGroup : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Seeker seeker;
@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
 
-    public GameObject squadPos;
-    public float centerDistance;
+    public bool selected;
 
     void Start()
     {
@@ -22,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, squadPos.transform.position) > centerDistance)
+        if(Input.GetMouseButtonDown(1))
         {
-            CalculatePathToGroup();
+            CalculateNewPath();
         }
 
         
@@ -57,9 +56,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void CalculatePathToGroup()
+    void CalculateNewPath()
     {
-        seeker.StartPath(rb.position, squadPos.transform.position, OnPathComplete);
+        Vector3 newPos = transform.position;
+
+        newPos.x = Random.Range(0, GridManager.Instance.width);
+        newPos.y = Random.Range(0, GridManager.Instance.height);
+
+        seeker.StartPath(rb.position, newPos, OnPathComplete);
+        
     }
 
     void OnPathComplete(Path p)
@@ -70,15 +75,5 @@ public class PlayerMovement : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
-    }
-
-    public void Deselect()
-    {
-        Debug.Log("Militia Deselected");
-    }
-
-    public void Select()
-    {
-        Debug.Log("Militia Selected");
     }
 }
