@@ -83,7 +83,7 @@ public class SquadControlScript : MonoBehaviour
         }
     }
 
-    void Select()
+    public void Select()
     {
         gameObject.GetComponent<SpriteRenderer>().color = selectColor;
     }

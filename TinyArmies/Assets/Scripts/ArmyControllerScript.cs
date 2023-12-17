@@ -45,14 +45,14 @@ public class ArmyControllerScript : MonoBehaviour
            
             selected = controllerHit.collider.gameObject;
 
-            selected.SendMessage("SelectedControl");
+            selected.SendMessage("Select");
 
         }
         else if(militiaHit == true)
         {
-            
-            selected = militiaHit.collider.gameObject;
-            selected.SendMessage("SelectedArmy");
+
+            selected = FindObjectOfType<SquadControlScript>().gameObject;
+            selected.SendMessage("Select");
         }
         else if(selected != null)
         {
