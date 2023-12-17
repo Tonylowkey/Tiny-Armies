@@ -430,7 +430,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 128
-  Mining: 0
+  Mining: {fileID: 728041316768409842}
   sp1: {fileID: -2147183162, guid: 57436f4a5e357c94da30886f8a8da51d, type: 3}
   sp2: {fileID: 172979034, guid: 57436f4a5e357c94da30886f8a8da51d, type: 3}
   sp3: {fileID: 850636255, guid: 57436f4a5e357c94da30886f8a8da51d, type: 3}
