@@ -58,8 +58,8 @@ public class ArmyControllerScript : MonoBehaviour
         else if(militiaHit == true)
         {
 
-            selected = FindObjectOfType<SquadControlScript>().gameObject;
-            selected.SendMessage("Select");
+            selected = militiaHit.gameObject;
+            
         }
         else if(selected != null)
         {
