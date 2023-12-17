@@ -43,19 +43,20 @@ public class ArmyControllerScript : MonoBehaviour
         if(controllerHit.collider != null)
         {
             if(controllerHit.collider.gameObject.tag == "groupController")
-        {
-            selected = controllerHit.collider.gameObject;
+            {
+                selected = controllerHit.collider.gameObject;
 
-            selected.SendMessage("Select");
+                selected.SendMessage("Select");
 
+            }
         }
-        }
-        
-        else if(militiaHit.collider.gameObject.tag == "playerMilitia")
+        else if(militiaHit.collider != null)
         {
-            // selected = FindObjectOfType<SquadControlScript>().gameObject;
-            selected = militiaHit.collider.gameObject;
-            selected.SendMessage("Select");
+            if(militiaHit.collider.gameObject.tag == "playerMilitia")
+            {
+                selected = militiaHit.collider.gameObject;
+                selected.SendMessage("Select");
+            }
         }
         else if(selected != null)
         {
