@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private int width, height;
+    public static GridManager Instance;
+    [SerializeField] public int width, height;
 
     [SerializeField] private GameObject tilePrefab;
 
@@ -18,6 +19,11 @@ public class GridManager : MonoBehaviour
 
     void Awake()
     {
+        if(Instance == null)
+            Instance=this;
+        else
+            Destroy(gameObject);
+
         GenerateGrid();
 
         GenerateObstical(50, tree);

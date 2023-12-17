@@ -7,7 +7,7 @@ public class GroupWander : MonoBehaviour
 {
     public float wanderSpeed = 2f;
     public float damping = 0.1f; // Damping factor
-    public GameObject wanderPoint; // Array of waypoints in the pathfinding area
+    // public GameObject wanderPoint; // Array of waypoints in the pathfinding area
 
     
     private Seeker seeker;

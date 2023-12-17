@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4325576618794808068}
   - component: {fileID: 2136437400721740002}
   - component: {fileID: 1230424674409545653}
+  - component: {fileID: -5685021848347902745}
   - component: {fileID: 2268438457592760276}
   - component: {fileID: 253850121342107675}
   - component: {fileID: -4316339021919200457}
@@ -124,6 +125,33 @@ CircleCollider2D:
   m_Offset: {x: -0.03125, y: 0.46875}
   serializedVersion: 2
   m_Radius: 0.46875
+--- !u!50 &-5685021848347902745
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129604814254422142}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &2268438457592760276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,11 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderSpeed: 2
   damping: 0.1
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  squadPos: {fileID: 0}
+  centerDistance: 0
 --- !u!114 &-4316339021919200457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +228,7 @@ MonoBehaviour:
   height: 2
   canMove: 1
   maxSpeed: 1
-  gravity: {x: NaN, y: NaN, z: NaN}
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
