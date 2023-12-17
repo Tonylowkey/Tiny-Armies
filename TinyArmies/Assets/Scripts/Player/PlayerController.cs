@@ -76,4 +76,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Militia Deselected");
     }
+
+    public void Select()
+    {
+        Debug.Log("Militia Selected");
+    }
 }
