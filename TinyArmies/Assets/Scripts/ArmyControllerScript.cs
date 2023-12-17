@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ArmyControllerScript : MonoBehaviour
@@ -8,9 +9,20 @@ public class ArmyControllerScript : MonoBehaviour
 
     [SerializeField] LayerMask controllerLayer;
     [SerializeField] LayerMask militiaLayer;
+
+    [SerializeField] LayerMask EnemyLayer;
     public GameObject selected;
     private GameObject target;
     private bool newSelect;
+
+
+    public List<float> Distances;
+    
+
+    public float SmallDist;
+
+
+    public GameObject closestEnemy;
 
     void Awake()
     {
@@ -24,6 +36,35 @@ public class ArmyControllerScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
             Click();
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Collider2D[] EnemyHit = Physics2D.OverlapCircleAll(transform.position, 100, EnemyLayer);
+            if (EnemyHit != null)
+            {
+                Distances.Clear();
+               
+                for (int i = 0; i < EnemyHit.Length; i++)
+                {
+
+                    Distances.Add(Vector2.Distance(transform.position, new Vector2(EnemyHit[i].transform.position.x, EnemyHit[i].transform.position.y)));
+                   
+                    
+                }
+                SmallDist = Distances.Min();
+                for (int i = 0; i < EnemyHit.Length; i++)
+                {
+                    if (Distances[i] == SmallDist)
+                    {
+                        closestEnemy = EnemyHit[i].gameObject;
+                    }
+                }
+                
+
+                
+            }
+        }
+        
     }
 
     public void Select(GameObject unit)
