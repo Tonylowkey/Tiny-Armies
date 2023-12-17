@@ -670,9 +670,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06, y: 0.41}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!50 &276699118
 Rigidbody2D:
   serializedVersion: 4
@@ -1108,7 +1108,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!50 &566406799
 Rigidbody2D:
   serializedVersion: 4
@@ -1487,9 +1487,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06, y: 0.41}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!50 &641089062
 Rigidbody2D:
   serializedVersion: 4
@@ -2089,7 +2089,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!50 &1346040945
 Rigidbody2D:
   serializedVersion: 4
@@ -2307,7 +2307,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!114 &1382530168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,7 +3317,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!50 &1848293675
 Rigidbody2D:
   serializedVersion: 4
@@ -3850,9 +3850,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06, y: 0.41}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!50 &1996788007
 Rigidbody2D:
   serializedVersion: 4
@@ -3967,6 +3967,9 @@ Transform:
   - {fileID: 276699113}
   - {fileID: 1996788002}
   - {fileID: 641089057}
+  - {fileID: 566406801}
+  - {fileID: 1346040947}
+  - {fileID: 1848293677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2138484270
