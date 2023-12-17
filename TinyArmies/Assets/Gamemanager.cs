@@ -11,9 +11,12 @@ public class Gamemanager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if(Instance == null)
+            Instance=this;
+        else
+            Destroy(gameObject);
     }
 
     // Update is called once per frame

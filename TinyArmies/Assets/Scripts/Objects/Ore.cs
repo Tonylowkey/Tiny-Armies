@@ -34,6 +34,8 @@ public class Ore : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<Gamemanager>();
+
+        
         sl.maxValue = health;
         sl.value = health;
         if(Tree == true)
