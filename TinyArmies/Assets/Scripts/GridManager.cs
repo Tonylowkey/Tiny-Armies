@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GameObject tilePrefab;
 
     [SerializeField] private GameObject tree;
+    [SerializeField] private GameObject BigTree;
 
     public List<List<GameObject>> tiles = new List<List<GameObject>>();
 
@@ -18,6 +19,7 @@ public class GridManager : MonoBehaviour
     {
         GenerateGrid();
 
+        GenerateBigObstical(5, BigTree);
         GenerateObstical(50, tree);
     }
 
@@ -73,16 +75,16 @@ public class GridManager : MonoBehaviour
 
                 if(!foundSpot)
                 {
-                    var x = Random.Range(0, width);
-                    var y = Random.Range(0, height);
+                    Vector2 size = item.transform.localScale;
 
-                    Vector2 size = item.transform.scale;
+                    int x = Random.Range(0, (int)(width - size.x));
+                    int y = Random.Range(0, (int)(height - size.y));
 
-                    for(a = 0; a < size.x; a++)
+                    for(int a = 0; a < size.x; a++)
                     {
-                        for(b = 0; b < size.y; b++)
+                        for(int b = 0; b < size.y; b++)
                         {
-                            if(tiles[x + a][y + b].occupied)
+                            if(tiles[x + a][y + b].GetComponent<TileScript>().occupied)
                             {
                                 tilesUnoccupied = false;
                             }
@@ -93,9 +95,9 @@ public class GridManager : MonoBehaviour
                     {
                         GameObject newItem = Instantiate(item, new Vector3(x + (size.x - 1)/2, y + (size.y - 1)/2), transform.rotation);
 
-                        for(a = 0; a < size.x; a++)
+                        for(int a = 0; a < size.x; a++)
                         {
-                            for(b = 0; b < size.y; b++)
+                            for(int b = 0; b < size.y; b++)
                             tiles[x + a][y + b].GetComponent<TileScript>().occupied = true;
                         }
 
@@ -106,4 +108,5 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
+    }
 }

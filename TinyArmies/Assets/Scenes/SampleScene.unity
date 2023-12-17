@@ -1379,6 +1379,7 @@ MonoBehaviour:
   height: 50
   tilePrefab: {fileID: 5023446582146031254, guid: 2ae45fc4323a2454c80b32cf16521d4c, type: 3}
   tree: {fileID: 8246191913831005855, guid: a0a83133c93e03b40a1827215e6fb085, type: 3}
+  BigTree: {fileID: 8246191913831005855, guid: 86c0ef24550d79a4aa0975e9a3fc833b, type: 3}
   shoots: 5
 --- !u!4 &1450237894
 Transform:
