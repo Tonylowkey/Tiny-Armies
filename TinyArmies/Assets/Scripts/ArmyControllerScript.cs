@@ -34,18 +34,19 @@ public class ArmyControllerScript : MonoBehaviour
 
     public void Click()
     {
-        var controllerHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), controllerLayer);
-        var militiaHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), militiaLayer);
 
-       
+        var controllerHit = Physics2D.OverlapCircle(Input.mousePosition,0.1f,controllerLayer);
+        var militiaHit = Physics2D.OverlapCircle(Input.mousePosition, 0.1f, militiaLayer);
 
-        if(selected != null)
+
+
+        if (selected != null)
             selected.SendMessage("Deselect");
 
         if(controllerHit == true)
         {
-           
-            selected = controllerHit.collider.gameObject;
+
+            selected = controllerHit.gameObject;
 
             selected.SendMessage("Select");
 
@@ -53,7 +54,7 @@ public class ArmyControllerScript : MonoBehaviour
         else if(militiaHit == true)
         {
 
-            selected = militiaHit.collider.gameObject;
+            selected = FindObjectOfType<SquadControlScript>().gameObject;
             selected.SendMessage("Select");
         }
         else if(selected != null)
