@@ -317,7 +317,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.163528, y: -10.519904, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7297366111556979741}
@@ -426,7 +426,7 @@ MonoBehaviour:
   health: 25
   Damage: 0.01
   Radius: 5
-  amount: 0
+  amount: 10
   mask:
     serializedVersion: 2
     m_Bits: 128
@@ -436,6 +436,8 @@ MonoBehaviour:
   sp3: {fileID: 850636255, guid: 57436f4a5e357c94da30886f8a8da51d, type: 3}
   Tree: 1
   sr: {fileID: 2758766418007941130}
+  randomRotate: 0
+  oreIndex: 0
 --- !u!1 &8753481547424615455
 GameObject:
   m_ObjectHideFlags: 0

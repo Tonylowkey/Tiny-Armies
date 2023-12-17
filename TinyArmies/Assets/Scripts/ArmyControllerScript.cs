@@ -40,14 +40,19 @@ public class ArmyControllerScript : MonoBehaviour
         if(selected != null)
             selected.SendMessage("Deselect");
 
-        if(controllerHit.collider.gameObject.tag == "groupController")
+        if(controllerHit == true)
         {
+           
             selected = controllerHit.collider.gameObject;
-            selected.SendMessage("Select");
+
+            selected.SendMessage("SelectedControl");
+
         }
-        else if(militiaHit.collider.gameObject.tag == "playerMilitia")
+        else if(militiaHit == true)
         {
+            
             selected = militiaHit.collider.gameObject;
+            selected.SendMessage("SelectedArmy");
         }
         else if(selected != null)
         {

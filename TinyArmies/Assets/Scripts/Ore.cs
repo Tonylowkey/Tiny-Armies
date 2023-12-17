@@ -26,9 +26,14 @@ public class Ore : MonoBehaviour
     public SpriteRenderer sr;
 
     public int randomRotate;
+
+    public int oreIndex;
+
+    Gamemanager gm;
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<Gamemanager>();
         sl.maxValue = health;
         sl.value = health;
         if(Tree == true)
@@ -46,7 +51,7 @@ public class Ore : MonoBehaviour
             {
                 sr.sprite = sp3;
             }
-
+            oreIndex = 1;
         }
         if (Tree == false)
         {
@@ -54,14 +59,17 @@ public class Ore : MonoBehaviour
             if (random == 0)
             {
                 sr.sprite = sp1;
+                oreIndex = 3;
             }
             if (random == 1)
             {
                 sr.sprite = sp2;
+                oreIndex = 2;
             }
             if (random == 2)
             {
                 sr.sprite = sp3;
+                oreIndex = 1;
             }
 
 
@@ -69,17 +77,17 @@ public class Ore : MonoBehaviour
         }
 
 
-         randomRotate = Random.Range(0, 30);
-        if(randomRotate >= 16)
+         randomRotate = Random.Range(0, 20);
+        if(randomRotate >= 10)
         {
             randomRotate = randomRotate / 2;
             Quaternion rotation = Quaternion.Euler(0, 0, randomRotate);
             transform.rotation = rotation;
 
         }
-        if (randomRotate <= 15)
+        if (randomRotate <= 9)
         {
-            randomRotate -= randomRotate * 2;
+            randomRotate -= randomRotate;
             Quaternion rotation =  Quaternion.Euler(0,0 ,randomRotate);
             transform.rotation = rotation;
         }
@@ -101,8 +109,42 @@ public class Ore : MonoBehaviour
             sl.value = health;
             if (health <= 0)
             {
-
+                Check();
                 Destroy(gameObject);
+            }
+        }
+    }
+
+    public void Check()
+    {
+        if(Tree == true)
+        {
+            if (oreIndex == 1)
+            {
+                gm.wood += amount;
+            }
+            if (oreIndex == 2)
+            {
+                gm.wood += amount;
+            }
+            if (oreIndex == 3)
+            {
+                gm.wood += amount;
+            }
+        }
+        if (Tree == false)
+        {
+            if (oreIndex == 1)
+            {
+                gm.rock += amount;
+            }
+            if (oreIndex == 2)
+            {
+                gm.wood += amount;
+            }
+            if (oreIndex == 3)
+            {
+                gm.iron += amount;
             }
         }
     }
