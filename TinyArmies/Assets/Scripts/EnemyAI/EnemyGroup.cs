@@ -11,8 +11,6 @@ public class EnemyGroup : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
 
-    public bool selected;
-
     void Start()
     {
         seeker = GetComponent<Seeker>();
