@@ -15,7 +15,7 @@ public class Ore : MonoBehaviour
 
     public LayerMask mask;
 
-    public bool Mining;
+    public Collider2D Mining;
 
     public Sprite sp1;
     public Sprite sp2;
@@ -100,10 +100,11 @@ public class Ore : MonoBehaviour
 
 
         
-
-
+        
+        
         if (Mining == true )
         {
+            Mining.gameObject.GetComponent<Farmer>().mining = true;
             sl.gameObject.SetActive(true);
             health -= Damage;
             sl.value = health;
@@ -112,6 +113,14 @@ public class Ore : MonoBehaviour
                 Check();
                 Destroy(gameObject);
             }
+        }
+        if(Mining == false)
+        {
+            if(Mining != null)
+            {
+                Mining.gameObject.GetComponent<Farmer>().mining = false;
+            }
+           
         }
     }
 
