@@ -56,11 +56,11 @@ public class Farmer : MonoBehaviour
         if (In == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, mousePos, speed * Time.deltaTime);
-            anim.SetBool("Isrunning", true);
+            // anim.SetBool("Isrunning", true);
             if (Vector2.Distance(transform.position, mousePos) < 0.1f)
             {
                 In = false;
-                anim.SetBool("Isrunning", false);
+                // anim.SetBool("Isrunning", false);
             }
         }
     }

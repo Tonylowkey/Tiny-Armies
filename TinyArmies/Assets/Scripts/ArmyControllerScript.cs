@@ -13,7 +13,6 @@ public class ArmyControllerScript : MonoBehaviour
     [SerializeField] LayerMask EnemyLayer;
     public GameObject selected;
     private GameObject target;
-    private bool newSelect;
 
 
     public List<float> Distances;
@@ -65,12 +64,6 @@ public class ArmyControllerScript : MonoBehaviour
             }
         }
         
-    }
-
-    public void Select(GameObject unit)
-    {
-        selected = unit;
-        newSelect = true;
     }
 
     public void Click()

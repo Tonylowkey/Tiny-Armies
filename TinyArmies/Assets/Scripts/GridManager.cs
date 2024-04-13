@@ -71,6 +71,8 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
+
+        Rescan();
     }
 
     void GenerateBigObstical(int spawns, GameObject item)
@@ -117,6 +119,8 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
+
+        Rescan();
     }
 
     void Rescan()

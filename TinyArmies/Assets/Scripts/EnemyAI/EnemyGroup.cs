@@ -19,12 +19,7 @@ public class EnemyGroup : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(1))
-        {
-            CalculateNewPath();
-        }
-
-        
+        CalculateNewPath();
     }
 
     void FixedUpdate()
